@@ -1,32 +1,31 @@
-
 # Enterprise Fleet System
 
-Enterprise Fleet System is a modern web application for vehicle tracking and fleet management. Built with Next.js and TypeScript, it provides a user-friendly interface to streamline fleet operations.
+Enterprise Fleet System, filo yönetimi ve araç takibi için geliştirilmiş modern bir web uygulamasıdır. Next.js ve TypeScript ile geliştirilmiştir. Kullanıcı dostu arayüzü ile filo operasyonlarını kolaylaştırır.
 
-## Features
-- Vehicle management
-- Driver management
-- Maintenance calendar
-- Financial analysis and reporting
-- Fleet health monitoring
-- Customizable settings
+## Özellikler
+- Araç yönetimi
+- Sürücü yönetimi
+- Bakım takvimi
+- Finansal analiz ve raporlama
+- Filo sağlık durumu izleme
+- Özelleştirilebilir ayarlar
 
-## Technologies
+## Teknolojiler
 - Next.js
 - TypeScript
 - React
 - Tailwind CSS
 
-## Folder Structure
-- `src/app/` - Application pages (dashboard, vehicles, drivers, reports, etc.)
-- `src/components/` - Reusable UI components
-- `src/constants/` - Mock data and constants
-- `src/context/` - Context providers
-- `src/hooks/` - Custom hooks
-- `src/lib/` - Utility functions
+## Klasör Yapısı
+- `src/app/` - Sayfalar (dashboard, araçlar, sürücüler, raporlar, ayarlar)
+- `src/components/` - Tekrar kullanılabilir arayüz bileşenleri
+- `src/constants/` - Sabitler ve mock veriler
+- `src/context/` - Context sağlayıcıları
+- `src/hooks/` - Özel React hook'ları
+- `src/lib/` - Yardımcı fonksiyonlar
 
-## Getting Started
-1. Clone the repository:
+## Başlangıç
+1. Depoyu klonlayın:
 	```bash
 	git clone https://github.com/kursatdemirdelen/enterprise-fleet-system.git
 	```
