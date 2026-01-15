@@ -3,7 +3,7 @@ import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
 
 export const metadata: Metadata = {
-  title: "CarTrack - Fleet Management System",
+  title: "Enterprise Fleet System",
   description: "Professional vehicle tracking and fleet management solution.",
 };
 

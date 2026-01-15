@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <PageContainer>
       <PageHeader
-        title="Gübretaş Filo"
+        title="Enterprise Fleet System"
         description="Filo operasyonları ve araç durum özeti"
         action={
           <Link href="/vehicles/new">
