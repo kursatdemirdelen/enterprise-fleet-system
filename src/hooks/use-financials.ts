@@ -6,14 +6,15 @@ import { VEHICLES_DATA, FUEL_LOGS_DATA } from '@/constants/mockData';
 export function useFinancials() {
     return useMemo(() => {
         // 1. Total Fleet Value & Purchase Cost
+
         const totalMarketValue = VEHICLES_DATA.reduce((sum, v) => sum + v.marketValue, 0);
         const totalPurchaseCost = VEHICLES_DATA.reduce((sum, v) => sum + v.purchasePrice, 0);
         const totalDepreciation = totalPurchaseCost - totalMarketValue;
 
         // 2. Operational Costs (Maintenance + Fuel)
-        // Note: In a real app, 'toplamMasraf' would be a sum of Maintenance Records. 
-        // Here we assume v.toplamMasraf is accumulated maintenance cost.
-        const totalMaintenanceCost = VEHICLES_DATA.reduce((sum, v) => sum + v.toplamMasraf, 0);
+        // Note: In a real app, 'totalCost' would be a sum of Maintenance Records. 
+        // Here we assume v.totalCost is accumulated maintenance cost.
+        const totalMaintenanceCost = VEHICLES_DATA.reduce((sum, v) => sum + v.totalCost, 0);
 
         // Sum of all fuel logs
         const totalFuelCost = FUEL_LOGS_DATA.reduce((sum, log) => sum + log.amount, 0);
@@ -29,9 +30,9 @@ export function useFinancials() {
 
         // Cost Per KM Calculation
         // Formula: Total Costs / Total Kilometers Driven
-        // Since we don't have "Total KM Driven since record start", we'll estimate based on 'mevcutKM'.
+        // Since we don't have "Total KM Driven since record start", we'll estimate based on 'currentKm'.
         // This is a rough approximation. In a real system you'd sum(Trip KMs).
-        const totalFleetKM = VEHICLES_DATA.reduce((sum, v) => sum + v.mevcutKM, 0);
+        const totalFleetKM = VEHICLES_DATA.reduce((sum, v) => sum + v.currentKm, 0);
 
         // To be safer/more realistic for "Cost per KM", let's use the maintenance cost / current km 
         // (assuming maintenance spans the life of vehicle)

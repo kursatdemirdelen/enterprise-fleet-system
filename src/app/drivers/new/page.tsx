@@ -7,7 +7,7 @@ import {
   Shield,
   CreditCard,
   FileText,
-  AlertCircle
+  AlertCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { PageHeader } from "@/components/layout/page-header";
@@ -20,7 +20,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from "@/components/ui/select";
 
 export default function NewDriverPage() {
@@ -52,20 +52,41 @@ export default function NewDriverPage() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label className="text-[10px] font-black uppercase text-gray-400">Ad Soyad</Label>
-                    <Input placeholder="Örn: Ahmet Yılmaz" className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none" />
+                    <Label className="text-[10px] font-black uppercase text-gray-400">
+                      Ad Soyad
+                    </Label>
+                    <Input
+                      placeholder="Örn: Ahmet Yılmaz"
+                      className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-[10px] font-black uppercase text-gray-400">TC Kimlik No</Label>
-                    <Input placeholder="11 haneli numara" className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none" />
+                    <Label className="text-[10px] font-black uppercase text-gray-400">
+                      TC Kimlik No
+                    </Label>
+                    <Input
+                      placeholder="11 haneli numara"
+                      className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-[10px] font-black uppercase text-gray-400">E-Posta Adresi</Label>
-                    <Input type="email" placeholder="example@cartrack.io" className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none" />
+                    <Label className="text-[10px] font-black uppercase text-gray-400">
+                      E-Posta Adresi
+                    </Label>
+                    <Input
+                      type="email"
+                      placeholder="example@cartrack.io"
+                      className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-[10px] font-black uppercase text-gray-400">Telefon Numarası</Label>
-                    <Input placeholder="+90 5xx" className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none" />
+                    <Label className="text-[10px] font-black uppercase text-gray-400">
+                      Telefon Numarası
+                    </Label>
+                    <Input
+                      placeholder="+90 5xx"
+                      className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none"
+                    />
                   </div>
                 </div>
               </div>
@@ -77,7 +98,9 @@ export default function NewDriverPage() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label className="text-[10px] font-black uppercase text-gray-400">Ehliyet Sınıfı</Label>
+                    <Label className="text-[10px] font-black uppercase text-gray-400">
+                      Ehliyet Sınıfı
+                    </Label>
                     <Select>
                       <SelectTrigger className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none">
                         <SelectValue placeholder="Seçiniz" />
@@ -91,18 +114,29 @@ export default function NewDriverPage() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-[10px] font-black uppercase text-gray-400">Ehliyet No</Label>
-                    <Input placeholder="TRxxxxxx" className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none" />
+                    <Label className="text-[10px] font-black uppercase text-gray-400">
+                      Ehliyet No
+                    </Label>
+                    <Input
+                      placeholder="TRxxxxxx"
+                      className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none"
+                    />
                   </div>
                   <div className="col-span-2 space-y-2">
-                    <Label className="text-[10px] font-black uppercase text-gray-400">Atanacak Bölge / Hub</Label>
+                    <Label className="text-[10px] font-black uppercase text-gray-400">
+                      Atanacak Bölge / Hub
+                    </Label>
                     <Select defaultValue="gebze">
                       <SelectTrigger className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none">
                         <SelectValue placeholder="Bölge Seçiniz" />
                       </SelectTrigger>
                       <SelectContent className="rounded-xl border-gray-100 shadow-xl">
-                        <SelectItem value="gebze">Gebze Lojistik Merkezi</SelectItem>
-                        <SelectItem value="ankara">Ankara Bölge Müdürlüğü</SelectItem>
+                        <SelectItem value="gebze">
+                          Gebze Lojistik Merkezi
+                        </SelectItem>
+                        <SelectItem value="ankara">
+                          Ankara Bölge Müdürlüğü
+                        </SelectItem>
                         <SelectItem value="izmir">İzmir Liman Hub</SelectItem>
                       </SelectContent>
                     </Select>
@@ -113,9 +147,17 @@ export default function NewDriverPage() {
 
             <div className="flex items-center justify-end gap-3 pt-4">
               <Link href="/drivers">
-                <Button variant="ghost" className="h-12 px-8 rounded-xl text-sm font-bold">Vazgeç</Button>
+                <Button
+                  variant="ghost"
+                  className="h-12 px-8 rounded-xl text-sm font-bold"
+                >
+                  Vazgeç
+                </Button>
               </Link>
-              <Button variant="premium" className="h-12 px-10 rounded-xl text-sm font-bold shadow-lg shadow-primary-200">
+              <Button
+                variant="premium"
+                className="h-12 px-10 rounded-xl text-sm font-bold shadow-lg shadow-primary-200"
+              >
                 Sürücüyü Kaydet
               </Button>
             </div>
@@ -127,14 +169,20 @@ export default function NewDriverPage() {
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
                 <AlertCircle className="w-5 h-5 text-primary-400" />
               </div>
-              <h4 className="text-sm font-black mb-2 uppercase tracking-widest">Önemli Not</h4>
+              <h4 className="text-sm font-black mb-2 uppercase tracking-widest">
+                Önemli Not
+              </h4>
               <p className="text-xs text-gray-400 leading-relaxed">
-                Yeni sürücü kaydı oluşturulduğunda sisteme otomatik olarak "Aktif Değil" durumunda eklenir. Sürücüye araç ataması yapıldığında durumu otomatik olarak güncellenecektir.
+                Yeni sürücü kaydı oluşturulduğunda sisteme otomatik olarak
+                &quot;Aktif Değil&quot; durumunda eklenir. Sürücüye araç ataması
+                yapıldığında durumu otomatik olarak güncellenecektir.
               </p>
             </div>
 
             <div className="card p-6 space-y-4">
-              <h4 className="text-xs font-black text-gray-900 uppercase tracking-widest leading-none mb-2">Gerekli Belgeler</h4>
+              <h4 className="text-xs font-black text-gray-900 uppercase tracking-widest leading-none mb-2">
+                Gerekli Belgeler
+              </h4>
               <div className="space-y-3">
                 {[
                   { label: "Ehliyet Fotokopisi", icon: CreditCard },
@@ -142,9 +190,14 @@ export default function NewDriverPage() {
                   { label: "Psikoteknik Belgesi", icon: Shield },
                   { label: "Sağlık Raporu", icon: FileText },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 rounded-xl border border-gray-50 bg-gray-50/30">
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 p-3 rounded-xl border border-gray-50 bg-gray-50/30"
+                  >
                     <item.icon className="w-4 h-4 text-gray-400" />
-                    <span className="text-xs font-bold text-gray-600">{item.label}</span>
+                    <span className="text-xs font-bold text-gray-600">
+                      {item.label}
+                    </span>
                   </div>
                 ))}
               </div>

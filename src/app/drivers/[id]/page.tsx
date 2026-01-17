@@ -61,7 +61,7 @@ export default function DriverDetailPage({ params }: PageProps) {
 
          <PageHeader
             title={driver.name}
-            description={`Profesyonel Sürücü • ${driver.experience} Tecrübe • ${driver.licenseNo}`}
+            description={`Profesyonel Sürücü • ${driver.experience} Tecrübe • ${driver.licenseNumber}`}
             action={
                <div className="flex gap-2">
                   <Button variant="outline" className="h-10 rounded-xl px-4 border-gray-200">
@@ -174,7 +174,7 @@ export default function DriverDetailPage({ params }: PageProps) {
                               </div>
                            </div>
                            <div className="text-right">
-                              <StatusBadge variant={log.type as any} className="mb-1 text-[9px]">{log.type.toUpperCase()}</StatusBadge>
+                              <StatusBadge variant={log.type as "success" | "primary" | "warning" | "default" | "danger" | "outline" | "premium" | undefined} className="mb-1 text-[9px]">{log.type.toUpperCase()}</StatusBadge>
                               <p className="text-[10px] font-black text-gray-300 uppercase tracking-tighter">{log.date}</p>
                            </div>
                         </div>

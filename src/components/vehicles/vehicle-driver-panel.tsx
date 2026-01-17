@@ -22,38 +22,68 @@ export function VehicleDriverPanel({ driver }: VehicleDriverPanelProps) {
         </Link>
       </div>
       <div className="p-6 border-b border-gray-50 bg-gray-50/30">
-        <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4">Görevli Sürücü</h3>
+        <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4">
+          Görevli Sürücü
+        </h3>
         {driver ? (
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center text-gray-300">
               <User className="w-8 h-8" />
             </div>
             <div className="flex-1 min-w-0">
-              <h4 className="text-base font-black text-gray-900 leading-none mb-1.5 truncate">{driver.name}</h4>
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">{driver.licenseNo}</p>
+              <h4 className="text-base font-black text-gray-900 leading-none mb-1.5 truncate">
+                {driver.name}
+              </h4>
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
+                {driver.licenseNumber}
+              </p>
               <div className="flex gap-1 mt-2">
-                <StatusBadge variant="success" className="text-[9px] h-5 px-1.5">Aktif Görevde</StatusBadge>
+                <StatusBadge
+                  variant="success"
+                  className="text-[9px] h-5 px-1.5"
+                >
+                  Aktif Görevde
+                </StatusBadge>
               </div>
             </div>
           </div>
         ) : (
           <div className="py-4 text-center">
-            <p className="text-xs font-bold text-gray-400">Atanmış sürücü bulunmuyor</p>
-            <Button variant="outline" className="h-8 mt-3 rounded-lg text-[10px] font-black uppercase border-gray-200">Sürücü Ata</Button>
+            <p className="text-xs font-bold text-gray-400">
+              Atanmış sürücü bulunmuyor
+            </p>
+            <Button
+              variant="outline"
+              className="h-8 mt-3 rounded-lg text-[10px] font-black uppercase border-gray-200"
+            >
+              Sürücü Ata
+            </Button>
           </div>
         )}
       </div>
       {driver && (
         <div className="p-4 grid grid-cols-2 gap-2 bg-white">
-          <Link href={`/drivers/${driver.id}`} className="w-full col-span-2 mb-2">
-            <Button variant="ghost" className="w-full h-9 rounded-xl text-[10px] font-black uppercase hover:bg-primary-50 hover:text-primary-600 border border-transparent hover:border-primary-100 transition-all flex items-center justify-center gap-2">
+          <Link
+            href={`/drivers/${driver.id}`}
+            className="w-full col-span-2 mb-2"
+          >
+            <Button
+              variant="ghost"
+              className="w-full h-9 rounded-xl text-[10px] font-black uppercase hover:bg-primary-50 hover:text-primary-600 border border-transparent hover:border-primary-100 transition-all flex items-center justify-center gap-2"
+            >
               Sürücü Profilini Gör <ChevronRight className="w-3 h-3" />
             </Button>
           </Link>
-          <Button variant="ghost" className="h-9 rounded-xl text-[10px] font-bold hover:bg-gray-50 border border-transparent hover:border-gray-100 gap-2">
+          <Button
+            variant="ghost"
+            className="h-9 rounded-xl text-[10px] font-bold hover:bg-gray-50 border border-transparent hover:border-gray-100 gap-2"
+          >
             <Phone className="w-3 h-3" /> Ara
           </Button>
-          <Button variant="ghost" className="h-9 rounded-xl text-[10px] font-bold hover:bg-gray-50 border border-transparent hover:border-gray-100 gap-2">
+          <Button
+            variant="ghost"
+            className="h-9 rounded-xl text-[10px] font-bold hover:bg-gray-50 border border-transparent hover:border-gray-100 gap-2"
+          >
             <Mail className="w-3 h-3" /> Mesaj
           </Button>
         </div>

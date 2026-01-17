@@ -33,7 +33,7 @@ export const SidebarLogo = ({ isCollapsed }: SidebarLogoProps) => {
       {/* Logo Icon */}
       <motion.div
         layout
-        className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white shadow-sm"
+        className="w-9 h-9 rounded-lg bg-linear-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white shadow-sm"
         animate={{ scale: isCollapsed ? 1.1 : 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >

@@ -1,7 +1,7 @@
 export interface Driver {
     id: string;
     name: string;
-    licenseNo: string;
+    licenseNumber: string;
     phone: string;
     email: string;
     avatar?: string;
@@ -23,73 +23,73 @@ export interface FuelLog {
 
 export interface Vehicle {
     id: string;
-    plaka: string;
-    marka: string;
+    plate: string;
+    brand: string;
     model: string;
-    sonBakimKM: number;
-    mevcutKM: number;
-    muayeneTarihi: string;
-    yagDegisimiKM: number;
-    toplamMasraf: number;
+    lastMaintenanceKm: number;
+    currentKm: number;
+    inspectionDate: string;
+    oilChangeKm: number;
+    totalCost: number;
     currentDriverId?: string;
     avgFuelConsumption?: number; // L/100km
-    purchasePrice: number; // Alış Fiyatı (TL)
-    marketValue: number; // Güncel Piyasa Değeri (TL)
-    purchaseDate: string; // Satın Alma Tarihi
+    purchasePrice: number; // Purchase Price (TL)
+    marketValue: number; // Current Market Value (TL)
+    purchaseDate: string; // Purchase Date
 }
 
 export const DRIVERS_DATA: Driver[] = [
     {
         id: "d1",
-        name: "Ahmet Yılmaz",
-        licenseNo: "TR123456",
+        name: "Ahmet Yilmaz",
+        licenseNumber: "TR123456",
         phone: "+90 532 111 22 33",
         email: "ahmet.y@cartrack.io",
         status: "on_trip",
-        experience: "12 Yıl",
+        experience: "12 Years",
         rating: 4.8,
         assignedVehicleId: "1"
     },
     {
         id: "d2",
         name: "Mehmet Demir",
-        licenseNo: "TR789012",
+        licenseNumber: "TR789012",
         phone: "+90 533 444 55 66",
         email: "mehmet.d@cartrack.io",
         status: "available",
-        experience: "8 Yıl",
+        experience: "8 Years",
         rating: 4.5,
         assignedVehicleId: "2"
     },
     {
         id: "d3",
-        name: "Caner Özcan",
-        licenseNo: "TR345678",
+        name: "Caner Ozcan",
+        licenseNumber: "TR345678",
         phone: "+90 535 777 88 99",
         email: "caner.o@cartrack.io",
         status: "off_duty",
-        experience: "5 Yıl",
+        experience: "5 Years",
         rating: 4.2
     }
 ];
 
 export const FUEL_LOGS_DATA: FuelLog[] = [
     { id: "f1", vehicleId: "1", date: "2025-02-10", km: 54100, liters: 45, amount: 1850, station: "Shell - Gebze" },
-    { id: "f2", vehicleId: "1", date: "2025-02-01", km: 53500, liters: 42, amount: 1720, station: "Opet - Kurtköy" },
+    { id: "f2", vehicleId: "1", date: "2025-02-01", km: 53500, liters: 42, amount: 1720, station: "Opet - Kurtkoy" },
     { id: "f3", vehicleId: "2", date: "2025-02-12", km: 124800, liters: 65, amount: 2650, station: "BP - Pendik" },
 ];
 
 export const VEHICLES_DATA: Vehicle[] = [
     {
         id: "1",
-        plaka: "34 ABC 123",
-        marka: "Tesla",
+        plate: "34 ABC 123",
+        brand: "Tesla",
         model: "Model 3",
-        sonBakimKM: 45000,
-        mevcutKM: 54200,
-        muayeneTarihi: "2026-02-01",
-        yagDegisimiKM: 60000,
-        toplamMasraf: 12500,
+        lastMaintenanceKm: 45000,
+        currentKm: 54200,
+        inspectionDate: "2026-02-01",
+        oilChangeKm: 60000,
+        totalCost: 12500,
         currentDriverId: "d1",
         avgFuelConsumption: 0, // Electric
         purchasePrice: 1800000,
@@ -98,14 +98,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "2",
-        plaka: "34 XYZ 789",
-        marka: "Mercedes",
+        plate: "34 XYZ 789",
+        brand: "Mercedes",
         model: "Sprinter",
-        sonBakimKM: 120000,
-        mevcutKM: 125000,
-        muayeneTarihi: "2026-06-15",
-        yagDegisimiKM: 135000,
-        toplamMasraf: 28400,
+        lastMaintenanceKm: 120000,
+        currentKm: 125000,
+        inspectionDate: "2026-06-15",
+        oilChangeKm: 135000,
+        totalCost: 28400,
         currentDriverId: "d2",
         avgFuelConsumption: 9.8,
         purchasePrice: 1200000,
@@ -114,14 +114,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "3",
-        plaka: "06 DEF 456",
-        marka: "BMW",
+        plate: "06 DEF 456",
+        brand: "BMW",
         model: "520i",
-        sonBakimKM: 85000,
-        mevcutKM: 94500,
-        muayeneTarihi: "2026-01-25",
-        yagDegisimiKM: 100000,
-        toplamMasraf: 18900,
+        lastMaintenanceKm: 85000,
+        currentKm: 94500,
+        inspectionDate: "2026-01-25",
+        oilChangeKm: 100000,
+        totalCost: 18900,
         avgFuelConsumption: 7.2,
         purchasePrice: 2500000,
         marketValue: 2300000,
@@ -129,14 +129,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "4",
-        plaka: "35 GHI 901",
-        marka: "Audi",
+        plate: "35 GHI 901",
+        brand: "Audi",
         model: "A4",
-        sonBakimKM: 30000,
-        mevcutKM: 32000,
-        muayeneTarihi: "2027-03-10",
-        yagDegisimiKM: 45000,
-        toplamMasraf: 5200,
+        lastMaintenanceKm: 30000,
+        currentKm: 32000,
+        inspectionDate: "2027-03-10",
+        oilChangeKm: 45000,
+        totalCost: 5200,
         avgFuelConsumption: 6.5,
         purchasePrice: 2100000,
         marketValue: 1950000,
@@ -144,14 +144,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "5",
-        plaka: "16 JKL 234",
-        marka: "Volkswagen",
+        plate: "16 JKL 234",
+        brand: "Volkswagen",
         model: "Crafter",
-        sonBakimKM: 150000,
-        mevcutKM: 159100,
-        muayeneTarihi: "2026-05-20",
-        yagDegisimiKM: 165000,
-        toplamMasraf: 32000,
+        lastMaintenanceKm: 150000,
+        currentKm: 159100,
+        inspectionDate: "2026-05-20",
+        oilChangeKm: 165000,
+        totalCost: 32000,
         avgFuelConsumption: 10.2,
         purchasePrice: 1100000,
         marketValue: 850000,
@@ -159,14 +159,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "6",
-        plaka: "07 MNO 567",
-        marka: "Ford",
+        plate: "07 MNO 567",
+        brand: "Ford",
         model: "Transit",
-        sonBakimKM: 200000,
-        mevcutKM: 205000,
-        muayeneTarihi: "2026-01-20",
-        yagDegisimiKM: 215000,
-        toplamMasraf: 15000,
+        lastMaintenanceKm: 200000,
+        currentKm: 205000,
+        inspectionDate: "2026-01-20",
+        oilChangeKm: 215000,
+        totalCost: 15000,
         avgFuelConsumption: 9.5,
         purchasePrice: 900000,
         marketValue: 650000,
@@ -174,14 +174,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "7",
-        plaka: "34 PRS 111",
-        marka: "Toyota",
+        plate: "34 PRS 111",
+        brand: "Toyota",
         model: "Corolla",
-        sonBakimKM: 60000,
-        mevcutKM: 68500,
-        muayeneTarihi: "2026-09-01",
-        yagDegisimiKM: 75000,
-        toplamMasraf: 7800,
+        lastMaintenanceKm: 60000,
+        currentKm: 68500,
+        inspectionDate: "2026-09-01",
+        oilChangeKm: 75000,
+        totalCost: 7800,
         avgFuelConsumption: 5.8,
         purchasePrice: 1150000,
         marketValue: 1050000,
@@ -189,14 +189,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "8",
-        plaka: "01 TUV 222",
-        marka: "Hyundai",
+        plate: "01 TUV 222",
+        brand: "Hyundai",
         model: "i20",
-        sonBakimKM: 40000,
-        mevcutKM: 41000,
-        muayeneTarihi: "2027-01-12",
-        yagDegisimiKM: 55000,
-        toplamMasraf: 4200,
+        lastMaintenanceKm: 40000,
+        currentKm: 41000,
+        inspectionDate: "2027-01-12",
+        oilChangeKm: 55000,
+        totalCost: 4200,
         avgFuelConsumption: 5.4,
         purchasePrice: 950000,
         marketValue: 900000,
@@ -204,14 +204,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "9",
-        plaka: "42 KLM 333",
-        marka: "Renault",
+        plate: "42 KLM 333",
+        brand: "Renault",
         model: "Megane",
-        sonBakimKM: 95000,
-        mevcutKM: 110000,
-        muayeneTarihi: "2026-03-18",
-        yagDegisimiKM: 105000,
-        toplamMasraf: 21000,
+        lastMaintenanceKm: 95000,
+        currentKm: 110000,
+        inspectionDate: "2026-03-18",
+        oilChangeKm: 105000,
+        totalCost: 21000,
         avgFuelConsumption: 6.2,
         purchasePrice: 1300000,
         marketValue: 1100000,
@@ -219,14 +219,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "10",
-        plaka: "34 BUS 444",
-        marka: "Isuzu",
+        plate: "34 BUS 444",
+        brand: "Isuzu",
         model: "NPR",
-        sonBakimKM: 180000,
-        mevcutKM: 195000,
-        muayeneTarihi: "2026-02-05",
-        yagDegisimiKM: 200000,
-        toplamMasraf: 41000,
+        lastMaintenanceKm: 180000,
+        currentKm: 195000,
+        inspectionDate: "2026-02-05",
+        oilChangeKm: 200000,
+        totalCost: 41000,
         avgFuelConsumption: 12.5,
         purchasePrice: 1600000,
         marketValue: 1300000,
@@ -234,14 +234,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "11",
-        plaka: "27 SRC 555",
-        marka: "Peugeot",
+        plate: "27 SRC 555",
+        brand: "Peugeot",
         model: "3008",
-        sonBakimKM: 50000,
-        mevcutKM: 57500,
-        muayeneTarihi: "2026-11-30",
-        yagDegisimiKM: 65000,
-        toplamMasraf: 9800,
+        lastMaintenanceKm: 50000,
+        currentKm: 57500,
+        inspectionDate: "2026-11-30",
+        oilChangeKm: 65000,
+        totalCost: 9800,
         avgFuelConsumption: 6.8,
         purchasePrice: 1750000,
         marketValue: 1600000,
@@ -249,14 +249,14 @@ export const VEHICLES_DATA: Vehicle[] = [
     },
     {
         id: "12",
-        plaka: "33 ADP 666",
-        marka: "Fiat",
+        plate: "33 ADP 666",
+        brand: "Fiat",
         model: "Doblo",
-        sonBakimKM: 130000,
-        mevcutKM: 138500,
-        muayeneTarihi: "2026-04-10",
-        yagDegisimiKM: 145000,
-        toplamMasraf: 26500,
+        lastMaintenanceKm: 130000,
+        currentKm: 138500,
+        inspectionDate: "2026-04-10",
+        oilChangeKm: 145000,
+        totalCost: 26500,
         avgFuelConsumption: 7.5,
         purchasePrice: 850000,
         marketValue: 600000,
@@ -265,16 +265,16 @@ export const VEHICLES_DATA: Vehicle[] = [
 ];
 
 export const MONTHLY_EXPENSES = [
-    { month: "Şubat", amount: 7200 },
-    { month: "Mart", amount: 9800 },
-    { month: "Nisan", amount: 6500 },
-    { month: "Mayıs", amount: 11200 },
-    { month: "Haziran", amount: 8700 },
-    { month: "Temmuz", amount: 13400 },
-    { month: "Ağustos", amount: 4500 },
-    { month: "Eylül", amount: 12000 },
-    { month: "Ekim", amount: 8000 },
-    { month: "Kasım", amount: 15000 },
-    { month: "Aralık", amount: 9500 },
-    { month: "Ocak", amount: 12500 },
+    { month: "February", amount: 7200 },
+    { month: "March", amount: 9800 },
+    { month: "April", amount: 6500 },
+    { month: "May", amount: 11200 },
+    { month: "June", amount: 8700 },
+    { month: "July", amount: 13400 },
+    { month: "August", amount: 4500 },
+    { month: "September", amount: 12000 },
+    { month: "October", amount: 8000 },
+    { month: "November", amount: 15000 },
+    { month: "December", amount: 9500 },
+    { month: "January", amount: 12500 },
 ];

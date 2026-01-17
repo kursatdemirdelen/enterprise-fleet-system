@@ -1,18 +1,18 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 // Define the available business models (Plans)
-export type BusinessModel = 'rent-a-car' | 'corporate' | 'enterprise';
+export type BusinessModel = "rent-a-car" | "corporate" | "enterprise";
 
 // Define granular features
 export type Feature =
-  | 'drivers'           // Driver management module
-  | 'fuel_tracking'     // Fuel logs and analysis
-  | 'maintenance_pro'   // Advanced maintenance calendar
-  | 'advanced_reports'  // Detailed analytics
-  | 'inventory'         // Detailed vehicle inventory management
-  | 'financial_widgets'; // Enterprise financial dashboards
+  | "drivers" // Driver management module
+  | "fuel_tracking" // Fuel logs and analysis
+  | "maintenance_pro" // Advanced maintenance calendar
+  | "advanced_reports" // Detailed analytics
+  | "inventory" // Detailed vehicle inventory management
+  | "financial_widgets"; // Enterprise financial dashboards
 
 interface FeatureContextType {
   businessModel: BusinessModel;
@@ -25,25 +25,37 @@ const FeatureContext = createContext<FeatureContextType | undefined>(undefined);
 
 // Define which features are available in which plan
 const PLAN_FEATURES: Record<BusinessModel, Feature[]> = {
-  'rent-a-car': ['inventory', 'maintenance_pro'], // Basic fleet tracking
-  'corporate': ['inventory', 'maintenance_pro', 'drivers', 'fuel_tracking'], // + Drivers & Fuel
-  'enterprise': ['inventory', 'maintenance_pro', 'drivers', 'fuel_tracking', 'advanced_reports', 'financial_widgets'] // + Everything
+  "rent-a-car": ["inventory", "maintenance_pro"], // Basic fleet tracking
+  corporate: ["inventory", "maintenance_pro", "drivers", "fuel_tracking"], // + Drivers & Fuel
+  enterprise: [
+    "inventory",
+    "maintenance_pro",
+    "drivers",
+    "fuel_tracking",
+    "advanced_reports",
+    "financial_widgets",
+  ], // + Everything
 };
 
 export function FeatureProvider({ children }: { children: React.ReactNode }) {
-  const [businessModel, setBusinessModelState] = useState<BusinessModel>('corporate');
+  const [businessModel, setBusinessModelState] =
+    useState<BusinessModel>("corporate");
 
-  // Persist plan selection
-  useEffect(() => {
-    const savedModel = localStorage.getItem('cartrack_business_model') as BusinessModel;
-    if (savedModel && PLAN_FEATURES[savedModel]) {
-      setBusinessModelState(savedModel);
+  // Persist plan selection (client-side only)
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedModel = localStorage.getItem(
+        "cartrack_business_model"
+      ) as BusinessModel;
+      if (savedModel && PLAN_FEATURES[savedModel]) {
+        setBusinessModelState(savedModel);
+      }
     }
   }, []);
 
   const setBusinessModel = (model: BusinessModel) => {
     setBusinessModelState(model);
-    localStorage.setItem('cartrack_business_model', model);
+    localStorage.setItem("cartrack_business_model", model);
     // Force reload to ensure all components re-render correctly with new context
     window.location.reload();
   };
@@ -53,12 +65,14 @@ export function FeatureProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <FeatureContext.Provider value={{
-      businessModel,
-      features: PLAN_FEATURES[businessModel],
-      setBusinessModel,
-      hasFeature
-    }}>
+    <FeatureContext.Provider
+      value={{
+        businessModel,
+        features: PLAN_FEATURES[businessModel],
+        setBusinessModel,
+        hasFeature,
+      }}
+    >
       {children}
     </FeatureContext.Provider>
   );

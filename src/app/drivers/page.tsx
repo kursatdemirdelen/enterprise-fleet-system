@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import { 
-  Plus, 
-  Search, 
-  Filter, 
+import { useState } from "react";
+import {
+  Plus,
+  Search,
+  Filter,
   Users,
   UserCheck,
   UserX,
-  Clock
+  Clock,
 } from "lucide-react";
 import { DRIVERS_DATA } from "@/constants/mockData";
 import { Button } from "@/components/ui/button";
@@ -20,19 +20,46 @@ import { DriverCard } from "@/components/cards/driver-card";
 import { StatCard } from "@/components/cards/stat-card";
 
 export default function DriversPage() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredDrivers = DRIVERS_DATA.filter(d => 
-    d.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    d.licenseNo.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredDrivers = DRIVERS_DATA.filter(
+    (d) =>
+      d.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      d.licenseNumber.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const stats = [
-    { label: "Toplam Sürücü", value: DRIVERS_DATA.length, icon: Users, color: "blue" },
-    { label: "Görevde", value: DRIVERS_DATA.filter(d => d.status === 'on_trip').length, icon: UserCheck, color: "green" },
-    { label: "Müsait", value: DRIVERS_DATA.filter(d => d.status === 'available').length, icon: Clock, color: "indigo" },
-    { label: "İzinli", value: DRIVERS_DATA.filter(d => d.status === 'off_duty').length, icon: UserX, color: "purple" },
+    {
+      label: "Toplam Sürücü",
+      value: DRIVERS_DATA.length,
+      icon: Users,
+      color: "blue",
+    },
+    {
+      label: "Görevde",
+      value: DRIVERS_DATA.filter((d) => d.status === "on_trip").length,
+      icon: UserCheck,
+      color: "green",
+    },
+    {
+      label: "Müsait",
+      value: DRIVERS_DATA.filter((d) => d.status === "available").length,
+      icon: Clock,
+      color: "indigo",
+    },
+    {
+      label: "İzinli",
+      value: DRIVERS_DATA.filter((d) => d.status === "off_duty").length,
+      icon: UserX,
+      color: "purple",
+    },
   ];
+
+  function ColorScheme(color: string): ("blue" | "green" | "indigo" | "purple" | "orange") | undefined {
+    return ["blue", "green", "indigo", "purple", "orange"].includes(color)
+      ? (color as "blue" | "green" | "indigo" | "purple" | "orange")
+      : undefined;
+  }
 
   return (
     <PageContainer>
@@ -57,7 +84,7 @@ export default function DriversPage() {
             label={stat.label}
             value={stat.value}
             icon={stat.icon}
-            colorScheme={stat.color as any}
+            colorScheme={ColorScheme(stat.color)}
             className="flex-1"
           />
         ))}
@@ -75,7 +102,10 @@ export default function DriversPage() {
           />
         </div>
 
-        <Button variant="outline" className="h-11 px-4 rounded-xl border-gray-200">
+        <Button
+          variant="outline"
+          className="h-11 px-4 rounded-xl border-gray-200"
+        >
           <Filter className="w-4 h-4 mr-2 text-gray-400" />
           <span className="text-sm font-bold text-gray-700">Filtrele</span>
         </Button>
@@ -93,8 +123,12 @@ export default function DriversPage() {
             <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
               <Users className="w-8 h-8 text-gray-300" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900">Sürücü Bulunamadı</h3>
-            <p className="text-sm text-gray-500 mt-1">Arama kriterlerinizi değiştirmeyi deneyin.</p>
+            <h3 className="text-lg font-bold text-gray-900">
+              Sürücü Bulunamadı
+            </h3>
+            <p className="text-sm text-gray-500 mt-1">
+              Arama kriterlerinizi değiştirmeyi deneyin.
+            </p>
           </div>
         )}
       </div>

@@ -14,7 +14,7 @@ import {
   ChevronRight,
   Menu,
   X,
-  Users
+  Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SidebarLogo } from "./sidebar/sidebar-logo";
@@ -23,12 +23,42 @@ import { SidebarUserProfile } from "./sidebar/sidebar-user-profile";
 import { useFeatures } from "@/context/feature-context";
 
 const navItems = [
-  { label: "Dashboard", icon: LayoutDashboard, href: "/", colorClass: "text-blue-600" },
-  { label: "Vehicles", icon: Car, href: "/vehicles", colorClass: "text-indigo-600" },
-  { label: "Drivers", icon: Users, href: "/drivers", colorClass: "text-emerald-600" },
-  { label: "Maintenance", icon: Calendar, href: "/calendar", colorClass: "text-amber-600" },
-  { label: "Reports", icon: BarChart3, href: "/reports", colorClass: "text-purple-600" },
-  { label: "Settings", icon: Settings, href: "/settings", colorClass: "text-gray-600" },
+  {
+    label: "Dashboard",
+    icon: LayoutDashboard,
+    href: "/",
+    colorClass: "text-blue-600",
+  },
+  {
+    label: "Vehicles",
+    icon: Car,
+    href: "/vehicles",
+    colorClass: "text-indigo-600",
+  },
+  {
+    label: "Drivers",
+    icon: Users,
+    href: "/drivers",
+    colorClass: "text-emerald-600",
+  },
+  {
+    label: "Maintenance",
+    icon: Calendar,
+    href: "/calendar",
+    colorClass: "text-amber-600",
+  },
+  {
+    label: "Reports",
+    icon: BarChart3,
+    href: "/reports",
+    colorClass: "text-purple-600",
+  },
+  {
+    label: "Settings",
+    icon: Settings,
+    href: "/settings",
+    colorClass: "text-gray-600",
+  },
 ];
 
 export function Sidebar() {
@@ -63,12 +93,14 @@ export function Sidebar() {
   return (
     <>
       {/* Mobile Top Bar - Only visible on small screens */}
-      <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-100 flex items-center justify-between px-4 z-[55] shadow-sm">
+      <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-100 flex items-center justify-between px-4 z-55 shadow-sm">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center text-white">
+          <div className="w-8 h-8 rounded-lg bg-linear-to-br from-primary-600 to-primary-700 flex items-center justify-center text-white">
             <Car className="w-5 h-5" />
           </div>
-          <span className="font-bold text-gray-900 tracking-tight">Enterprise Fleet</span>
+          <span className="font-bold text-gray-900 tracking-tight">
+            Enterprise Fleet
+          </span>
         </Link>
         <button
           onClick={toggleMobileMenu}
@@ -87,7 +119,7 @@ export function Sidebar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsMobileOpen(false)}
-            className="md:hidden fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-[60]"
+            className="md:hidden fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-60"
           />
         )}
       </AnimatePresence>
@@ -96,20 +128,24 @@ export function Sidebar() {
         initial={false}
         animate={isMobileOpen ? { x: 0 } : { x: 0 }}
         className={cn(
-          "fixed md:relative shrink-0 border-r border-gray-100 bg-white flex flex-col z-[65] shadow-[1px_0_0_0_rgba(0,0,0,0.02)] h-screen transition-transform duration-300",
+          "fixed md:relative shrink-0 border-r border-gray-100 bg-white flex flex-col z-65 shadow-[1px_0_0_0_rgba(0,0,0,0.02)] h-screen transition-transform duration-300",
           !isMobileOpen && "-translate-x-full md:translate-x-0"
         )}
         style={{
-          width: isMobileOpen ? 280 : (isCollapsed ? 80 : 256),
+          width: isMobileOpen ? 280 : isCollapsed ? 80 : 256,
         }}
       >
         {/* Collapse Toggle Button - Hidden on mobile */}
         <button
           onClick={toggleSidebar}
-          className="hidden md:flex absolute -right-3 top-24 w-6 h-6 rounded-full bg-white border border-gray-100 items-center justify-center text-gray-400 hover:text-primary-600 hover:border-primary-200 shadow-sm transition-all z-[70] hover:scale-110 active:scale-95"
+          className="hidden md:flex absolute -right-3 top-24 w-6 h-6 rounded-full bg-white border border-gray-100 items-center justify-center text-gray-400 hover:text-primary-600 hover:border-primary-200 shadow-sm transition-all z-70 hover:scale-110 active:scale-95"
           aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
-          {isCollapsed ? <ChevronRight className="w-3.5 h-3.5" /> : <ChevronLeft className="w-3.5 h-3.5" />}
+          {isCollapsed ? (
+            <ChevronRight className="w-3.5 h-3.5" />
+          ) : (
+            <ChevronLeft className="w-3.5 h-3.5" />
+          )}
         </button>
 
         <div className="p-4 flex flex-col h-full overflow-hidden">
@@ -130,8 +166,10 @@ export function Sidebar() {
           <nav className="flex-1 space-y-1 mt-4">
             {navItems.map((item) => {
               // Feature Flag Logic
-              if (item.label === 'Drivers' && !hasFeature('drivers')) return null;
-              if (item.label === 'Reports' && !hasFeature('advanced_reports')) return null;
+              if (item.label === "Drivers" && !hasFeature("drivers"))
+                return null;
+              if (item.label === "Reports" && !hasFeature("advanced_reports"))
+                return null;
 
               return (
                 <SidebarNavItem

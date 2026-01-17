@@ -8,11 +8,11 @@ import {
   Info,
   Save,
   ChevronLeft,
-  Activity
+  Activity,
 } from "lucide-react";
 import Link from "next/link";
 
-import { VEHICLES_DATA, Vehicle } from "@/constants/mockData";
+import { VEHICLES_DATA } from "@/constants/mockData";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,7 +21,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from "@/components/ui/select";
 import { PageHeader } from "@/components/layout/page-header";
 import { PageContainer } from "@/components/layout/page-container";
@@ -31,7 +31,7 @@ export default function EditVehiclePage() {
   const params = useParams();
   const router = useRouter();
   const id = params.id as string;
-  const vehicle = VEHICLES_DATA.find(v => v.id === id);
+  const vehicle = VEHICLES_DATA.find((v) => v.id === id);
 
   if (!vehicle) {
     return (
@@ -69,19 +69,31 @@ export default function EditVehiclePage() {
           </Button>
         </Link>
         <div className="h-4 w-px bg-gray-200" />
-        <StatusBadge variant="outline" className="h-6">ID: {vehicle.id}</StatusBadge>
+        <StatusBadge variant="outline" className="h-6">
+          ID: {vehicle.id}
+        </StatusBadge>
       </div>
 
       <PageHeader
-        title={`Düzenle: ${vehicle.plaka}`}
+        title={`Düzenle: ${vehicle.plate}`}
         description="Araç bilgilerini ve teknik detayları güncelleyin"
         action={
           <div className="flex items-center gap-2">
-            <Button variant="destructive" size="sm" onClick={handleDelete} className="rounded-xl">
+            <Button
+              variant="destructive"
+              size="sm"
+              onClick={handleDelete}
+              className="rounded-xl"
+            >
               <Trash2 className="w-4 h-4 mr-2" />
               Aracı Sil
             </Button>
-            <Button variant="premium" size="sm" onClick={handleSave} className="rounded-xl">
+            <Button
+              variant="premium"
+              size="sm"
+              onClick={handleSave}
+              className="rounded-xl"
+            >
               <Save className="w-4 h-4 mr-2" />
               Değişiklikleri Kaydet
             </Button>
@@ -103,12 +115,19 @@ export default function EditVehiclePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Plaka</Label>
-                  <Input defaultValue={vehicle.plaka} className="font-mono h-11 transition-all focus:ring-4 focus:ring-primary-100/50" />
+                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Plaka
+                  </Label>
+                  <Input
+                    defaultValue={vehicle.plate}
+                    className="font-mono h-11 transition-all focus:ring-4 focus:ring-primary-100/50"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Marka</Label>
-                  <Select defaultValue={vehicle.marka.toLowerCase()}>
+                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Marka
+                  </Label>
+                  <Select defaultValue={vehicle.brand.toLowerCase()}>
                     <SelectTrigger className="h-11">
                       <SelectValue />
                     </SelectTrigger>
@@ -123,11 +142,15 @@ export default function EditVehiclePage() {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Model</Label>
+                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Model
+                  </Label>
                   <Input defaultValue={vehicle.model} className="h-11" />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Yıl</Label>
+                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Yıl
+                  </Label>
                   <Input type="number" defaultValue="2024" className="h-11" />
                 </div>
               </div>
@@ -143,20 +166,46 @@ export default function EditVehiclePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Mevcut Kilometre</Label>
-                  <Input type="number" defaultValue={vehicle.mevcutKM} suffix="km" className="h-11 font-mono" />
+                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Mevcut Kilometre
+                  </Label>
+                  <Input
+                    type="number"
+                    defaultValue={vehicle.currentKm}
+                    suffix="km"
+                    className="h-11 font-mono"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Son Servis Tarihi</Label>
-                  <Input type="date" defaultValue="2025-01-10" className="h-11" />
+                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Son Servis Tarihi
+                  </Label>
+                  <Input
+                    type="date"
+                    defaultValue="2025-01-10"
+                    className="h-11"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Son Servis Kilometresi</Label>
-                  <Input type="number" defaultValue={vehicle.sonBakimKM} suffix="km" className="h-11 font-mono" />
+                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Son Servis Kilometresi
+                  </Label>
+                  <Input
+                    type="number"
+                    defaultValue={vehicle.lastMaintenanceKm}
+                    suffix="km"
+                    className="h-11 font-mono"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Gelecek Muayene Tarihi</Label>
-                  <Input type="date" defaultValue={vehicle.muayeneTarihi} className="h-11" />
+                  <Label className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Gelecek Muayene Tarihi
+                  </Label>
+                  <Input
+                    type="date"
+                    defaultValue={vehicle.inspectionDate}
+                    className="h-11"
+                  />
                 </div>
               </div>
             </section>
@@ -166,13 +215,19 @@ export default function EditVehiclePage() {
         {/* Assets & Meta */}
         <div className="space-y-6">
           <div className="card p-6">
-            <h4 className="text-sm font-bold text-gray-900 mb-4">Araç Görselleri</h4>
+            <h4 className="text-sm font-bold text-gray-900 mb-4">
+              Araç Görselleri
+            </h4>
             <div className="aspect-square rounded-2xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-6 hover:border-primary-500 hover:bg-primary-50/10 transition-all cursor-pointer group">
               <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center mb-3 group-hover:bg-primary-600 group-hover:text-white transition-all">
                 <Upload className="w-6 h-6" />
               </div>
-              <p className="text-xs font-bold text-gray-900">Uğraştırıcı Yükle</p>
-              <p className="text-[10px] text-gray-400 mt-1">PNG, JPG veya PDF (Max 5MB)</p>
+              <p className="text-xs font-bold text-gray-900">
+                Uğraştırıcı Yükle
+              </p>
+              <p className="text-[10px] text-gray-400 mt-1">
+                PNG, JPG veya PDF (Max 5MB)
+              </p>
             </div>
           </div>
         </div>

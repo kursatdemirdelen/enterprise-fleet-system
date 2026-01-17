@@ -156,7 +156,7 @@ export default function SettingsPage() {
                        <span className="font-bold text-gray-900">{mode.label}</span>
                        {businessModel === mode.id && <div className="w-2.5 h-2.5 rounded-full bg-primary-600" />}
                      </div>
-                     <p className="text-xs text-gray-500 mb-3 min-h-[40px]">{mode.desc}</p>
+                     <p className="text-xs text-gray-500 mb-3 min-h-10">{mode.desc}</p>
                      <div className="flex flex-wrap gap-1">
                         {mode.features.map(f => (
                           <span key={f} className="text-[10px] font-medium px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded">
