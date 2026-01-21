@@ -37,5 +37,19 @@
     "eslint-config-next": "16.1.2",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "Enterprise Fleet System, filo yönetimi ve araç takibi için modern bir web uygulamasıdır.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kursatdemirdelen/enterprise-fleet-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kursatdemirdelen/enterprise-fleet-system/issues"
+  },
+  "homepage": "https://github.com/kursatdemirdelen/enterprise-fleet-system#readme"
 }
