@@ -49,7 +49,7 @@ export const SidebarUserProfile = ({
           >
             <div className="flex items-center justify-between">
               <span className="text-sm font-bold text-gray-900 truncate tracking-tight">
-                Ahmet Kürşat Demirdelen
+                Ahmet K. Demirdelen
               </span>
               <Settings2 className="w-3 h-3 text-gray-400 group-hover:text-gray-600 transition-colors" />
             </div>

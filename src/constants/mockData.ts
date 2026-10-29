@@ -38,6 +38,13 @@ export interface Vehicle {
     purchaseDate: string; // Purchase Date
 }
 
+// Demo verisi her zaman güncel kalsın diye muayene tarihleri bugüne göre hesaplanır.
+const daysFromNow = (days: number): string => {
+    const d = new Date();
+    d.setDate(d.getDate() + days);
+    return d.toISOString().slice(0, 10);
+};
+
 export const DRIVERS_DATA: Driver[] = [
     {
         id: "d1",
@@ -87,7 +94,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "Model 3",
         lastMaintenanceKm: 45000,
         currentKm: 54200,
-        inspectionDate: "2026-02-01",
+        inspectionDate: daysFromNow(12),
         oilChangeKm: 60000,
         totalCost: 12500,
         currentDriverId: "d1",
@@ -103,7 +110,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "Sprinter",
         lastMaintenanceKm: 120000,
         currentKm: 125000,
-        inspectionDate: "2026-06-15",
+        inspectionDate: daysFromNow(95),
         oilChangeKm: 135000,
         totalCost: 28400,
         currentDriverId: "d2",
@@ -119,7 +126,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "520i",
         lastMaintenanceKm: 85000,
         currentKm: 94500,
-        inspectionDate: "2026-01-25",
+        inspectionDate: daysFromNow(5),
         oilChangeKm: 100000,
         totalCost: 18900,
         avgFuelConsumption: 7.2,
@@ -134,7 +141,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "A4",
         lastMaintenanceKm: 30000,
         currentKm: 32000,
-        inspectionDate: "2027-03-10",
+        inspectionDate: daysFromNow(220),
         oilChangeKm: 45000,
         totalCost: 5200,
         avgFuelConsumption: 6.5,
@@ -149,7 +156,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "Crafter",
         lastMaintenanceKm: 150000,
         currentKm: 159100,
-        inspectionDate: "2026-05-20",
+        inspectionDate: daysFromNow(140),
         oilChangeKm: 165000,
         totalCost: 32000,
         avgFuelConsumption: 10.2,
@@ -164,7 +171,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "Transit",
         lastMaintenanceKm: 200000,
         currentKm: 205000,
-        inspectionDate: "2026-01-20",
+        inspectionDate: daysFromNow(26),
         oilChangeKm: 215000,
         totalCost: 15000,
         avgFuelConsumption: 9.5,
@@ -179,7 +186,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "Corolla",
         lastMaintenanceKm: 60000,
         currentKm: 68500,
-        inspectionDate: "2026-09-01",
+        inspectionDate: daysFromNow(60),
         oilChangeKm: 75000,
         totalCost: 7800,
         avgFuelConsumption: 5.8,
@@ -194,7 +201,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "i20",
         lastMaintenanceKm: 40000,
         currentKm: 41000,
-        inspectionDate: "2027-01-12",
+        inspectionDate: daysFromNow(300),
         oilChangeKm: 55000,
         totalCost: 4200,
         avgFuelConsumption: 5.4,
@@ -209,7 +216,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "Megane",
         lastMaintenanceKm: 95000,
         currentKm: 110000,
-        inspectionDate: "2026-03-18",
+        inspectionDate: daysFromNow(45),
         oilChangeKm: 105000,
         totalCost: 21000,
         avgFuelConsumption: 6.2,
@@ -224,7 +231,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "NPR",
         lastMaintenanceKm: 180000,
         currentKm: 195000,
-        inspectionDate: "2026-02-05",
+        inspectionDate: daysFromNow(20),
         oilChangeKm: 200000,
         totalCost: 41000,
         avgFuelConsumption: 12.5,
@@ -239,7 +246,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "3008",
         lastMaintenanceKm: 50000,
         currentKm: 57500,
-        inspectionDate: "2026-11-30",
+        inspectionDate: daysFromNow(180),
         oilChangeKm: 65000,
         totalCost: 9800,
         avgFuelConsumption: 6.8,
@@ -254,7 +261,7 @@ export const VEHICLES_DATA: Vehicle[] = [
         model: "Doblo",
         lastMaintenanceKm: 130000,
         currentKm: 138500,
-        inspectionDate: "2026-04-10",
+        inspectionDate: daysFromNow(75),
         oilChangeKm: 145000,
         totalCost: 26500,
         avgFuelConsumption: 7.5,
