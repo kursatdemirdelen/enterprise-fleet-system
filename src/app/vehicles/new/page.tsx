@@ -24,12 +24,12 @@ export default function NewVehiclePage() {
         className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 mb-4"
       >
         <ArrowLeft className="w-4 h-4" />
-        Back to Vehicles
+        Araçlara Dön
       </Link>
 
       <PageHeader
-        title="Add New Vehicle"
-        description="Register a new vehicle to your fleet management system"
+        title="Yeni Araç Ekle"
+        description="Filonuza yeni bir araç kaydedin"
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -38,12 +38,12 @@ export default function NewVehiclePage() {
           <div className="card p-6 space-y-6">
             <div>
               <h3 className="text-base font-semibold text-gray-900 mb-4">
-                Vehicle Information
+                Araç Bilgileri
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-xs font-medium text-gray-700">
-                    License Plate
+                    Plaka
                   </Label>
                   <Input placeholder="e.g. 34 ABC 123" className="font-mono" />
                 </div>
@@ -53,7 +53,7 @@ export default function NewVehiclePage() {
                   </Label>
                   <Select>
                     <SelectTrigger className="h-9">
-                      <SelectValue placeholder="Select brand" />
+                      <SelectValue placeholder="Marka seçin" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="bmw">BMW</SelectItem>
@@ -72,7 +72,7 @@ export default function NewVehiclePage() {
                 </div>
                 <div className="space-y-2">
                   <Label className="text-xs font-medium text-gray-700">
-                    Year
+                    Yıl
                   </Label>
                   <Input type="number" placeholder="2024" />
                 </div>
@@ -81,12 +81,12 @@ export default function NewVehiclePage() {
 
             <div className="pt-6 border-t border-gray-200">
               <h3 className="text-base font-semibold text-gray-900 mb-4">
-                Mileage & Maintenance
+                Kilometre ve Bakım
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-xs font-medium text-gray-700">
-                    Current Mileage
+                    Güncel Kilometre
                   </Label>
                   <Input type="number" placeholder="0" suffix="km" />
                 </div>
@@ -98,13 +98,13 @@ export default function NewVehiclePage() {
                 </div>
                 <div className="space-y-2">
                   <Label className="text-xs font-medium text-gray-700">
-                    Last Service Mileage
+                    Son Bakım Kilometresi
                   </Label>
                   <Input type="number" placeholder="0" suffix="km" />
                 </div>
                 <div className="space-y-2">
                   <Label className="text-xs font-medium text-gray-700">
-                    Next Inspection Date
+                    Sonraki Muayene Tarihi
                   </Label>
                   <Input type="date" />
                 </div>
@@ -117,12 +117,12 @@ export default function NewVehiclePage() {
                   variant="outline"
                   className="rounded-md h-9 px-4 text-sm font-medium"
                 >
-                  Cancel
+                  İptal
                 </Button>
               </Link>
               <Button className="rounded-md h-9 px-4 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium">
                 <Check className="w-4 h-4 mr-2" />
-                Add Vehicle
+                Araç Ekle
               </Button>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function NewVehiclePage() {
                   System Ready
                 </h3>
                 <p className="text-xs text-gray-600">
-                  All systems operational for new vehicle registration
+                  Yeni araç kaydı için tüm sistemler hazır
                 </p>
               </div>
             </div>
@@ -152,10 +152,10 @@ export default function NewVehiclePage() {
                 <Upload className="w-6 h-6" />
               </div>
               <h4 className="text-sm font-semibold text-gray-900 mb-1">
-                Upload Photos
+                Fotoğraf Yükle
               </h4>
               <p className="text-xs text-gray-500 max-w-50">
-                Add vehicle photos and documents
+                Araç fotoğraflarını ve belgelerini ekleyin
               </p>
             </div>
           </div>

@@ -41,12 +41,12 @@ export interface Vehicle {
 export const DRIVERS_DATA: Driver[] = [
     {
         id: "d1",
-        name: "Ahmet Yilmaz",
+        name: "Ahmet Yılmaz",
         licenseNumber: "TR123456",
         phone: "+90 532 111 22 33",
-        email: "ahmet.y@cartrack.io",
+        email: "ahmet.y@fleet.example.com",
         status: "on_trip",
-        experience: "12 Years",
+        experience: "12 Yıl",
         rating: 4.8,
         assignedVehicleId: "1"
     },
@@ -55,27 +55,27 @@ export const DRIVERS_DATA: Driver[] = [
         name: "Mehmet Demir",
         licenseNumber: "TR789012",
         phone: "+90 533 444 55 66",
-        email: "mehmet.d@cartrack.io",
+        email: "mehmet.d@fleet.example.com",
         status: "available",
-        experience: "8 Years",
+        experience: "8 Yıl",
         rating: 4.5,
         assignedVehicleId: "2"
     },
     {
         id: "d3",
-        name: "Caner Ozcan",
+        name: "Caner Özcan",
         licenseNumber: "TR345678",
         phone: "+90 535 777 88 99",
-        email: "caner.o@cartrack.io",
+        email: "caner.o@fleet.example.com",
         status: "off_duty",
-        experience: "5 Years",
+        experience: "5 Yıl",
         rating: 4.2
     }
 ];
 
 export const FUEL_LOGS_DATA: FuelLog[] = [
     { id: "f1", vehicleId: "1", date: "2025-02-10", km: 54100, liters: 45, amount: 1850, station: "Shell - Gebze" },
-    { id: "f2", vehicleId: "1", date: "2025-02-01", km: 53500, liters: 42, amount: 1720, station: "Opet - Kurtkoy" },
+    { id: "f2", vehicleId: "1", date: "2025-02-01", km: 53500, liters: 42, amount: 1720, station: "Opet - Kurtköy" },
     { id: "f3", vehicleId: "2", date: "2025-02-12", km: 124800, liters: 65, amount: 2650, station: "BP - Pendik" },
 ];
 

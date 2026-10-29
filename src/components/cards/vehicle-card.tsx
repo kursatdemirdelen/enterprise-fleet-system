@@ -135,7 +135,7 @@ export function VehicleCard({
           </div>
           <div className="p-3 rounded-xl bg-gray-50/50 border border-gray-100">
             <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider block mb-1">
-              Last Maintenance
+              Son Bakım
             </span>
             <p className="text-lg font-bold text-gray-900 font-mono leading-none">
               {vehicle.lastMaintenanceKm.toLocaleString()}
@@ -147,7 +147,7 @@ export function VehicleCard({
       <div className="mt-auto p-4 flex items-center justify-between border-t border-gray-100 gap-2">
         <Link href={`/vehicles/${vehicle.id}`} className="flex-1">
           <Button variant="outline" size="sm" className="w-full">
-            View Details
+            Detayları Gör
           </Button>
         </Link>
         <Link href={`/vehicles/${vehicle.id}/edit`}>

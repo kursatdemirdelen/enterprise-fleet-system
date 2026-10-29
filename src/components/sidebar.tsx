@@ -24,37 +24,37 @@ import { useFeatures } from "@/context/feature-context";
 
 const navItems = [
   {
-    label: "Dashboard",
+    label: "Panel",
     icon: LayoutDashboard,
     href: "/",
     colorClass: "text-blue-600",
   },
   {
-    label: "Vehicles",
+    label: "Araçlar",
     icon: Car,
     href: "/vehicles",
     colorClass: "text-indigo-600",
   },
   {
-    label: "Drivers",
+    label: "Sürücüler",
     icon: Users,
     href: "/drivers",
     colorClass: "text-emerald-600",
   },
   {
-    label: "Maintenance",
+    label: "Bakım",
     icon: Calendar,
     href: "/calendar",
     colorClass: "text-amber-600",
   },
   {
-    label: "Reports",
+    label: "Raporlar",
     icon: BarChart3,
     href: "/reports",
     colorClass: "text-purple-600",
   },
   {
-    label: "Settings",
+    label: "Ayarlar",
     icon: Settings,
     href: "/settings",
     colorClass: "text-gray-600",
@@ -166,9 +166,9 @@ export function Sidebar() {
           <nav className="flex-1 space-y-1 mt-4">
             {navItems.map((item) => {
               // Feature Flag Logic
-              if (item.label === "Drivers" && !hasFeature("drivers"))
+              if (item.label === "Sürücüler" && !hasFeature("drivers"))
                 return null;
-              if (item.label === "Reports" && !hasFeature("advanced_reports"))
+              if (item.label === "Raporlar" && !hasFeature("advanced_reports"))
                 return null;
 
               return (

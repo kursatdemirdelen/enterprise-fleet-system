@@ -75,7 +75,7 @@ export default function NewDriverPage() {
                     </Label>
                     <Input
                       type="email"
-                      placeholder="example@cartrack.io"
+                      placeholder="ornek@fleet.example.com"
                       className="h-11 rounded-xl border-gray-100 bg-gray-50/30 focus:bg-white transition-all shadow-none"
                     />
                   </div>

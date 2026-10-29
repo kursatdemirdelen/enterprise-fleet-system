@@ -45,7 +45,7 @@ export function FeatureProvider({ children }: { children: React.ReactNode }) {
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       const savedModel = localStorage.getItem(
-        "cartrack_business_model"
+        "fleet_business_model"
       ) as BusinessModel;
       if (savedModel && PLAN_FEATURES[savedModel]) {
         setBusinessModelState(savedModel);
@@ -55,7 +55,7 @@ export function FeatureProvider({ children }: { children: React.ReactNode }) {
 
   const setBusinessModel = (model: BusinessModel) => {
     setBusinessModelState(model);
-    localStorage.setItem("cartrack_business_model", model);
+    localStorage.setItem("fleet_business_model", model);
     // Force reload to ensure all components re-render correctly with new context
     window.location.reload();
   };

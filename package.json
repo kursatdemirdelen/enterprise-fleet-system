@@ -1,6 +1,7 @@
 {
-  "name": "car-track-web",
+  "name": "enterprise-fleet-system",
   "version": "0.1.0",
+  "description": "Filo yönetimi ve araç takibi için Next.js ile geliştirilmiş modern web uygulaması: araçlar, sürücüler, bakım takvimi ve raporlar.",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -38,15 +39,19 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   },
-  "description": "Enterprise Fleet System, filo yönetimi ve araç takibi için modern bir web uygulamasıdır.",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kursatdemirdelen/enterprise-fleet-system.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "fleet-management",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "dashboard"
+  ],
+  "author": "Ahmet Kürşat Demirdelen",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kursatdemirdelen/enterprise-fleet-system/issues"
   },

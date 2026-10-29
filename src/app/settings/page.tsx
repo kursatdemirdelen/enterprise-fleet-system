@@ -25,16 +25,16 @@ export default function SettingsPage() {
   return (
     <PageContainer>
       <PageHeader
-        title="Settings"
-        description="Manage your fleet management system preferences"
+        title="Ayarlar"
+        description="Filo yönetim sistemi tercihlerinizi yönetin"
       />
 
       <Tabs defaultValue="profile" className="space-y-6">
         <TabsList className="bg-gray-100 p-1 rounded-lg inline-flex h-auto w-auto gap-1">
           {[
-            { id: "profile", label: "Profile", icon: User },
-            { id: "notifications", label: "Notifications", icon: Bell },
-            { id: "security", label: "Security", icon: Shield },
+            { id: "profile", label: "Profil", icon: User },
+            { id: "notifications", label: "Bildirimler", icon: Bell },
+            { id: "security", label: "Güvenlik", icon: Shield },
             { id: "system", label: "System", icon: Globe },
           ].map((tab) => (
             <TabsTrigger 
@@ -51,31 +51,31 @@ export default function SettingsPage() {
         <TabsContent value="profile" className="space-y-6">
           <div className="card p-6 space-y-6">
             <div>
-              <h3 className="text-base font-semibold text-gray-900 mb-4">Profile Information</h3>
+              <h3 className="text-base font-semibold text-gray-900 mb-4">Profil Bilgileri</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-gray-700">Full Name</Label>
-                  <Input defaultValue="Kürşat Can" />
+                  <Label className="text-xs font-medium text-gray-700">Ad Soyad</Label>
+                  <Input defaultValue="Ahmet Kürşat Demirdelen" />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-gray-700">Email</Label>
-                  <Input defaultValue="kursat@cartrack.io" type="email" />
+                  <Label className="text-xs font-medium text-gray-700">E-posta</Label>
+                  <Input defaultValue="ahmet@fleet.example.com" type="email" />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-gray-700">Role</Label>
+                  <Label className="text-xs font-medium text-gray-700">Rol</Label>
                   <Select defaultValue="admin">
                     <SelectTrigger className="h-9">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="admin">Administrator</SelectItem>
-                      <SelectItem value="manager">Fleet Manager</SelectItem>
-                      <SelectItem value="viewer">Viewer</SelectItem>
+                      <SelectItem value="admin">Yönetici</SelectItem>
+                      <SelectItem value="manager">Filo Yöneticisi</SelectItem>
+                      <SelectItem value="viewer">Görüntüleyici</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-xs font-medium text-gray-700">Language</Label>
+                  <Label className="text-xs font-medium text-gray-700">Dil</Label>
                   <Select defaultValue="tr">
                     <SelectTrigger className="h-9">
                       <SelectValue />
@@ -91,7 +91,7 @@ export default function SettingsPage() {
 
             <div className="pt-4 border-t border-gray-200 flex justify-end">
               <Button className="rounded-md h-9 px-4 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium">
-                Save Changes
+                Değişiklikleri Kaydet
               </Button>
             </div>
           </div>
@@ -100,9 +100,9 @@ export default function SettingsPage() {
         <TabsContent value="notifications" className="space-y-6">
           <div className="card p-6 space-y-4">
             {[
-              { title: "Maintenance Alerts", desc: "Get notified when vehicles need maintenance" },
-              { title: "Inspection Reminders", desc: "Daily countdown for upcoming inspections" },
-              { title: "Cost Alerts", desc: "Notify when expenses exceed budget" }
+              { title: "Bakım Uyarıları", desc: "Get notified when vehicles need maintenance" },
+              { title: "Muayene Hatırlatıcıları", desc: "Daily countdown for upcoming inspections" },
+              { title: "Maliyet Uyarıları", desc: "Notify when expenses exceed budget" }
             ].map((item, i) => (
               <div key={i} className="flex items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors">
                 <div className="space-y-1">
@@ -120,7 +120,7 @@ export default function SettingsPage() {
             <div>
                <h3 className="text-base font-semibold text-gray-900 mb-4">System Configuration</h3>
                <p className="text-sm text-gray-500 mb-6">
-                 Choose the operating mode for your fleet management system. This controls which modules (Drivers, Reports, etc.) are active.
+                 Filo yönetim sisteminin çalışma modunu seçin. Bu seçim hangi modüllerin (Sürücüler, Raporlar vb.) aktif olacağını belirler.
                </p>
                
                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -133,7 +133,7 @@ export default function SettingsPage() {
                    },
                    { 
                      id: 'corporate', 
-                     label: 'Corporate Fleet', 
+                     label: 'Kurumsal Filo', 
                      desc: 'Full workforce management for company fleets.',
                      features: ['Drivers', 'Fuel Analysis', 'Assignments']
                    },
@@ -174,9 +174,9 @@ export default function SettingsPage() {
                   <Shield className="w-5 h-5" />
                </div>
                <div>
-                 <h4 className="text-sm font-bold text-yellow-800">Demo Mode Active</h4>
+                 <h4 className="text-sm font-bold text-yellow-800">Demo Modu Aktif</h4>
                  <p className="text-xs text-yellow-700 mt-1">
-                   Switching modes will instantly update the Sidebar, Dashboard, and available features. In a production environment, this would be locked to your license key.
+                   Mod değiştirmek kenar çubuğunu, paneli ve kullanılabilir özellikleri anında günceller. Canlı ortamda bu seçim lisans anahtarınıza bağlı olurdu.
                  </p>
                </div>
             </div>

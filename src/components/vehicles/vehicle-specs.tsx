@@ -11,10 +11,10 @@ interface VehicleSpecsProps {
 
 export function VehicleSpecs({ vehicle }: VehicleSpecsProps) {
   const specs = [
-    { label: "Plate", value: vehicle.plate, mono: true },
-    { label: "Brand", value: vehicle.brand },
+    { label: "Plaka", value: vehicle.plate, mono: true },
+    { label: "Marka", value: vehicle.brand },
     { label: "Model", value: vehicle.model },
-    { label: "Year", value: "2024" },
+    { label: "Yıl", value: "2024" },
     { label: "Chassis", value: "NMTR123456789", mono: true },
     { label: "Engine", value: "ENG987654321", mono: true },
   ];
@@ -23,7 +23,7 @@ export function VehicleSpecs({ vehicle }: VehicleSpecsProps) {
     <div className="card overflow-hidden">
       <div className="p-5 border-b border-gray-100 bg-gray-50/30">
         <h2 className="text-sm font-black text-gray-900 uppercase tracking-widest">
-          Vehicle Specs
+          Araç Özellikleri
         </h2>
       </div>
       <div className="p-5 space-y-4">
@@ -44,7 +44,7 @@ export function VehicleSpecs({ vehicle }: VehicleSpecsProps) {
         ))}
         <div className="pt-4 border-t border-gray-100 flex justify-between items-center">
           <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-            Status
+            Durum
           </span>
           <StatusBadge
             variant={

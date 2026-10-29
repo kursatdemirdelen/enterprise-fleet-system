@@ -4,7 +4,7 @@ import { Sidebar } from "@/components/sidebar";
 
 export const metadata: Metadata = {
   title: "Enterprise Fleet System",
-  description: "Professional vehicle tracking and fleet management solution.",
+  description: "Profesyonel araç takibi ve filo yönetimi çözümü.",
 };
 
 import { FeatureProvider } from "@/context/feature-context";
