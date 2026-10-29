@@ -15,8 +15,8 @@ export function VehicleSpecs({ vehicle }: VehicleSpecsProps) {
     { label: "Marka", value: vehicle.brand },
     { label: "Model", value: vehicle.model },
     { label: "Yıl", value: "2024" },
-    { label: "Chassis", value: "NMTR123456789", mono: true },
-    { label: "Engine", value: "ENG987654321", mono: true },
+    { label: "Şasi No", value: "NMTR123456789", mono: true },
+    { label: "Motor No", value: "ENG987654321", mono: true },
   ];
 
   return (
@@ -54,8 +54,8 @@ export function VehicleSpecs({ vehicle }: VehicleSpecsProps) {
             }
           >
             {vehicle.currentKm - vehicle.lastMaintenanceKm >= 9000
-              ? "Maintenance Required"
-              : "Operational"}
+              ? "Bakım Gerekli"
+              : "Operasyonel"}
           </StatusBadge>
         </div>
       </div>

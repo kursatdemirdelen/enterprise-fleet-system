@@ -265,16 +265,16 @@ export const VEHICLES_DATA: Vehicle[] = [
 ];
 
 export const MONTHLY_EXPENSES = [
-    { month: "February", amount: 7200 },
-    { month: "March", amount: 9800 },
-    { month: "April", amount: 6500 },
-    { month: "May", amount: 11200 },
-    { month: "June", amount: 8700 },
-    { month: "July", amount: 13400 },
-    { month: "August", amount: 4500 },
-    { month: "September", amount: 12000 },
-    { month: "October", amount: 8000 },
-    { month: "November", amount: 15000 },
-    { month: "December", amount: 9500 },
-    { month: "January", amount: 12500 },
+    { month: "Şubat", amount: 7200 },
+    { month: "Mart", amount: 9800 },
+    { month: "Nisan", amount: 6500 },
+    { month: "Mayıs", amount: 11200 },
+    { month: "Haziran", amount: 8700 },
+    { month: "Temmuz", amount: 13400 },
+    { month: "Ağustos", amount: 4500 },
+    { month: "Eylül", amount: 12000 },
+    { month: "Ekim", amount: 8000 },
+    { month: "Kasım", amount: 15000 },
+    { month: "Aralık", amount: 9500 },
+    { month: "Ocak", amount: 12500 },
 ];

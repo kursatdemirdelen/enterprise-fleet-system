@@ -74,7 +74,7 @@ export function VehicleCard({
           <div className="flex items-center gap-4 shrink-0">
             <div className="text-right hidden sm:block">
               <p className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">
-                Distance
+                Mesafe
               </p>
               <p className="text-sm font-bold text-gray-900 font-mono">
                 {vehicle.currentKm.toLocaleString()}{" "}
@@ -82,7 +82,7 @@ export function VehicleCard({
               </p>
             </div>
             <StatusBadge variant={needsMaintenance ? "warning" : "success"}>
-              {needsMaintenance ? "Action" : "Available"}
+              {needsMaintenance ? "Bakım" : "Müsait"}
             </StatusBadge>
             <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-primary-600 transition-colors" />
           </div>
@@ -120,14 +120,14 @@ export function VehicleCard({
             </p>
           </div>
           <StatusBadge variant={needsMaintenance ? "danger" : "success"}>
-            {needsMaintenance ? "Maintenance Required" : "Operational"}
+            {needsMaintenance ? "Bakım Gerekli" : "Operasyonel"}
           </StatusBadge>
         </div>
 
         <div className="grid grid-cols-2 gap-4 mt-6">
           <div className="p-3 rounded-xl bg-gray-50/50 border border-gray-100">
             <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider block mb-1">
-              Current KM
+              Güncel KM
             </span>
             <p className="text-lg font-bold text-gray-900 font-mono leading-none">
               {vehicle.currentKm.toLocaleString()}
